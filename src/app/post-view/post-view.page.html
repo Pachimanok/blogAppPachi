@@ -1,0 +1,37 @@
+
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="posts"></ion-back-button>
+    </ion-buttons>
+    <div *ngFor="let p of post">
+      <ion-title class="titulos"> {{ p['name'] }}</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" >
+<div *ngFor="let p of post">
+    <ion-img src="{{ p['url'] }}"></ion-img>
+    <ion-grid>
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col size="auto" class="ion-text-center">
+          <ion-text class="titulos ">
+            <ion-badge class="categorias">{{ p['nombre'] }}</ion-badge>
+            <h1>{{ p['name'] }}</h1>
+            <h5 class="subtitulos">{{p['subtitulo']}}</h5>
+          </ion-text>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
+    <div class="parrafos" [innerHTML]="p['body']"></div>
+  </div>
+ </ion-content>
+
+
+   
+
+
+
